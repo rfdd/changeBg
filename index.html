@@ -1,0 +1,40 @@
+<html>
+<head><title>Change background</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<form id="form">
+	<input id="name" name="name" type="text" required placeholder="NAME" >
+	<input id="phone" name="phone" type="text" required placeholder="PHONE">
+	
+	
+	<input id="submit" type="submit" onclick="changeBg()" value="SUBMIT">
+  
+</form>
+
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>
+	$(document).ready(function() {
+
+	$("#form").submit(function() {
+		$.ajax({
+			type: "POST",
+			url: "mail.php",
+			data: $(this).serialize()
+		}).done(function() {
+			$(this).find("input").val("");
+			alert("THX 4 REQUEST");
+			$("#form").trigger("reset");
+		});
+		return false;
+	});
+	
+});
+</script>
+<script src="main.js"></script>
+ </body>
+ </html>
