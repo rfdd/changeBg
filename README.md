@@ -1,3 +1,3 @@
 # TEST TASK :pencil2:
-## Change background image after submit contact form
+## Ajax contact form with change background image after submit
 ### :link: Preview page https://rfdd.ru/change-background/ :link:
